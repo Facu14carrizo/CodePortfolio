@@ -128,17 +128,6 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="space-y-8"
         >
-          {/* Greeting */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="inline-block"
-          >
-            <span className="px-4 py-2 bg-gradient-to-r from-primary-500/20 to-accent-500/20 border border-primary-500/30 rounded-full text-sm font-inter font-medium text-primary-600 dark:text-primary-300">
-              👋 ¡Hola! Soy Facundo
-            </span>
-          </motion.div>
 
           {/* Main Title with Advanced Animations */}
           <motion.div
