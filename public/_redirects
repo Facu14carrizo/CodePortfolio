@@ -1,0 +1,5 @@
+/*
+  Redirects for Single Page Application (SPA) on Netlify
+  Ensures client-side routing works for all sub-routes
+*/
+/*    /index.html   200
