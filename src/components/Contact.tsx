@@ -365,31 +365,82 @@ const Contact: React.FC = () => {
       </div>
 
       {/* Footer */}
-      <motion.footer
-        initial={{ opacity: 0 }}
-        animate={inView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ delay: 1 }}
-        className="mt-20 py-8 border-t border-primary-200/30 dark:border-white/10"
-      >
+      <footer className="mt-20 pt-16 pb-8 border-t border-white/10 bg-[#08080a] relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-primary-400 to-accent-400 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">FC</span>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-10 pb-12 border-b border-white/10">
+            
+            {/* Columna 1: Perfil y Marca */}
+            <div className="md:col-span-2 space-y-4">
+              <div className="flex items-center space-x-3">
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-400 shadow-md">
+                  <img src="Yo.jpg" alt="Facundo Carrizo" className="w-full h-full object-cover" />
+                </div>
+                <span className="text-xl font-space font-bold text-white">
+                  Facundo Carrizo
+                </span>
               </div>
-              <span className="text-gray-600 dark:text-gray-300 font-inter">
-                © 2025 Facundo Carrizo. Todos los derechos reservados.
-              </span>
+              <p className="text-gray-400 font-inter text-sm max-w-md leading-relaxed">
+                Desarrollador Full Stack apasionado por construir productos web modernos, 
+                aplicaciones ágiles e interfaces de alto impacto visual.
+              </p>
+              <div className="flex items-center space-x-4 pt-2">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2.5 rounded-lg bg-white/5 border border-white/10 hover:border-primary-500/50 hover:bg-primary-500/10 text-gray-300 hover:text-white transition-all duration-300"
+                    aria-label={link.name}
+                  >
+                    <link.icon size={18} />
+                  </a>
+                ))}
+              </div>
             </div>
-            <div className="flex items-center space-x-2 text-gray-500 dark:text-gray-400">
-              <Globe size={16} />
-              <span className="font-inter text-sm">
-                Desarrollado con ❤️ en Argentina
-              </span>
+
+            {/* Columna 2: Navegación Rápida */}
+            <div className="space-y-3">
+              <h4 className="text-xs font-mono tracking-widest text-primary-400 uppercase font-semibold">
+                Navegación
+              </h4>
+              <ul className="space-y-2 font-inter text-sm text-gray-400">
+                <li><a href="#home" className="hover:text-white transition-colors">Inicio</a></li>
+                <li><a href="#projects" className="hover:text-white transition-colors">Proyectos</a></li>
+                <li><a href="#services" className="hover:text-white transition-colors">Servicios</a></li>
+                <li><a href="#workflow" className="hover:text-white transition-colors">Modalidad de Trabajo</a></li>
+                <li><a href="#stack" className="hover:text-white transition-colors">Stack Tecnológico</a></li>
+              </ul>
+            </div>
+
+            {/* Columna 3: Contacto Directo */}
+            <div className="space-y-3">
+              <h4 className="text-xs font-mono tracking-widest text-primary-400 uppercase font-semibold">
+                Contacto
+              </h4>
+              <ul className="space-y-2.5 font-inter text-sm text-gray-400">
+                <li className="flex items-center space-x-2">
+                  <Mail size={16} className="text-primary-400" />
+                  <a href="mailto:facu14carrizo@gmail.com" className="hover:text-white transition-colors">facu14carrizo@gmail.com</a>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <Phone size={16} className="text-primary-400" />
+                  <a href="tel:+5491163704522" className="hover:text-white transition-colors">+54 9 11 6370-4522</a>
+                </li>
+                <li className="flex items-center space-x-2">
+                  <MapPin size={16} className="text-primary-400" />
+                  <span>Tigre, Buenos Aires, ARG</span>
+                </li>
+              </ul>
             </div>
           </div>
+
+          {/* Bar de Copyright */}
+          <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-inter text-gray-400 gap-4">
+            <span>© {new Date().getFullYear()} Facundo Carrizo. Todos los derechos reservados.</span>
+          </div>
         </div>
-      </motion.footer>
+      </footer>
     </section>
   );
 };

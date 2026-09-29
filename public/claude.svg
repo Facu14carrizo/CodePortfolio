@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title id="title">Claude</title>
+  <rect width="128" height="128" rx="30" fill="#f0e8dc"/>
+  <g fill="none" stroke="#d97757" stroke-linecap="round" stroke-width="13">
+    <path d="M64 20v88M20 64h88M33 33l62 62M95 33 33 95"/>
+  </g>
+  <circle cx="64" cy="64" r="9" fill="#d97757"/>
+</svg>

@@ -130,6 +130,20 @@ body:not(.dark) .animated-bg {
   animation: gradient-xy 15s ease infinite;
 }
 
+/* Marquee Animations */
+@keyframes marquee {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(calc(-50% - 0.75rem), 0, 0); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translate3d(calc(-50% - 0.75rem), 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee { animation: marquee 35s linear infinite; }
+.animate-marquee-reverse { animation: marquee-reverse 35s linear infinite; }
+
 /* Advanced background effects */
 .hero-bg {
   position: absolute;

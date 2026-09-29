@@ -19,9 +19,10 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { name: 'Inicio', href: '#home', icon: Home },
-    { name: 'Sobre Mí', href: '#about', icon: User },
     { name: 'Proyectos', href: '#projects', icon: Briefcase },
     { name: 'Servicios', href: '#services', icon: Code },
+    { name: 'Modalidad', href: '#workflow', icon: User },
+    { name: 'Stack', href: '#stack', icon: Code },
     { name: 'Contacto', href: '#contact', icon: Mail },
   ];
 
@@ -54,11 +55,11 @@ const Navbar: React.FC = () => {
             onClick={() => scrollToSection('#home')}
           >
             <motion.div 
-              className="w-10 h-10 bg-gradient-to-br from-primary-400 to-accent-400 rounded-lg flex items-center justify-center shadow-lg"
-              whileHover={{ rotate: 5 }}
+              className="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-400 shadow-lg flex items-center justify-center bg-dark-800"
+              whileHover={{ scale: 1.08, rotate: 5 }}
               transition={{ duration: 0.2 }}
             >
-              <span className="text-white font-bold text-lg">FC</span>
+              <img src="Yo.jpg" alt="Facundo Carrizo" className="w-full h-full object-cover" />
             </motion.div>
             <span className="text-xl font-space font-bold gradient-text">
               Facundo Carrizo

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
 import Projects from './components/Projects';
 import Services from './components/Services';
+import TechStack from './components/TechStack';
 import Contact from './components/Contact';
 import ThemeProvider from './contexts/ThemeContext';
 import './styles/globals.css';
@@ -71,9 +71,9 @@ function App() {
               <Navbar />
               <main>
                 <Hero />
-                <About />
                 <Projects />
                 <Services />
+                <TechStack />
                 <Contact />
               </main>
             </motion.div>
