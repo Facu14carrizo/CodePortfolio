@@ -21,7 +21,6 @@ const Navbar: React.FC = () => {
     { name: 'Inicio', href: '#home', icon: Home },
     { name: 'Proyectos', href: '#projects', icon: Briefcase },
     { name: 'Servicios', href: '#services', icon: Code },
-    { name: 'Modalidad', href: '#workflow', icon: User },
     { name: 'Stack', href: '#stack', icon: Code },
     { name: 'Contacto', href: '#contact', icon: Mail },
   ];

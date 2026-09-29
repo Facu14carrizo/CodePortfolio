@@ -408,7 +408,6 @@ const Contact: React.FC = () => {
                 <li><a href="#home" className="hover:text-white transition-colors">Inicio</a></li>
                 <li><a href="#projects" className="hover:text-white transition-colors">Proyectos</a></li>
                 <li><a href="#services" className="hover:text-white transition-colors">Servicios</a></li>
-                <li><a href="#workflow" className="hover:text-white transition-colors">Modalidad de Trabajo</a></li>
                 <li><a href="#stack" className="hover:text-white transition-colors">Stack Tecnológico</a></li>
               </ul>
             </div>

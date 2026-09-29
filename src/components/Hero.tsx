@@ -96,9 +96,9 @@ const Hero: React.FC = () => {
   ];
 
   const scrollToNext = () => {
-    const aboutSection = document.querySelector('#about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
+    const projectsSection = document.querySelector('#projects');
+    if (projectsSection) {
+      projectsSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 

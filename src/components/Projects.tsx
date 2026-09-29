@@ -70,11 +70,11 @@ function ProjectCard({ project }: { project: { name: string, image: string, link
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
         loading="lazy"
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-[#08080a]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#08080a] via-[#08080a]/40 to-transparent opacity-80 sm:opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      <div className="absolute inset-x-0 bottom-0 p-6 md:p-8 translate-y-6 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
-        <h3 className="text-xl md:text-2xl font-space font-bold text-white tracking-tight">{project.name}</h3>
-        <div className="mt-2 h-[2px] w-12 bg-primary-500 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-75" />
+      <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6 md:p-8 translate-y-0 sm:translate-y-6 opacity-100 sm:opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 ease-out">
+        <h3 className="text-lg sm:text-xl md:text-2xl font-space font-bold text-white tracking-tight">{project.name}</h3>
+        <div className="mt-1.5 sm:mt-2 h-[2px] w-10 sm:w-12 bg-primary-500 transform origin-left scale-x-100 sm:scale-x-0 group-hover:scale-x-100 transition-transform duration-500 delay-75" />
       </div>
     </a>
   );

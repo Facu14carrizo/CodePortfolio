@@ -167,11 +167,11 @@ const TechStack: React.FC = () => {
         </div>
 
         {/* Solar System Orbit Board */}
-        <div className="relative h-[760px] w-full max-w-[980px] mx-auto my-8 flex items-center justify-center rounded-full">
+        <div className="relative h-[480px] sm:h-[620px] md:h-[760px] w-full max-w-[980px] mx-auto my-4 sm:my-8 flex items-center justify-center rounded-full scale-[0.88] sm:scale-100 origin-center">
           
           {/* Orbit rings with exact SVG/CSS styling from original */}
-          <div className="absolute inset-0 m-auto w-[88%] h-[70%] rounded-full border border-[rgba(157,140,255,0.18)] -rotate-6 pointer-events-none shadow-[0_0_80px_rgba(157,140,255,0.05),inset_0_0_80px_rgba(157,140,255,0.04)]" />
-          <div className="absolute inset-0 m-auto w-[55%] h-[43%] rounded-full border border-[rgba(201,255,74,0.16)] -rotate-6 pointer-events-none shadow-[0_0_0_105px_rgba(255,255,255,0.006)]" />
+          <div className="absolute inset-0 m-auto w-[92%] sm:w-[88%] h-[75%] sm:h-[70%] rounded-full border border-[rgba(157,140,255,0.18)] -rotate-6 pointer-events-none shadow-[0_0_80px_rgba(157,140,255,0.05),inset_0_0_80px_rgba(157,140,255,0.04)]" />
+          <div className="absolute inset-0 m-auto w-[60%] sm:w-[55%] h-[48%] sm:h-[43%] rounded-full border border-[rgba(201,255,74,0.16)] -rotate-6 pointer-events-none shadow-[0_0_0_105px_rgba(255,255,255,0.006)]" />
 
           {/* Technology Nodes / Planets */}
           {technologies.map((tech, index) => {
@@ -182,11 +182,11 @@ const TechStack: React.FC = () => {
               dotnet: 'left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-20',
               csharp: 'left-1/2 top-[7%]',
               react: 'left-[77%] top-[15%]',
-              javascript: 'left-[93%] top-[39%]',
-              html: 'left-[86%] top-[72%]',
+              javascript: 'left-[91%] top-[39%]',
+              html: 'left-[84%] top-[72%]',
               css: 'left-[61%] top-[89%]',
               mysql: 'left-[34%] top-[88%]',
-              kotlin: 'left-[11%] top-[70%]',
+              kotlin: 'left-[13%] top-[70%]',
               android: 'left-[7%] top-[39%]',
               git: 'left-[23%] top-[14%]',
               github: 'left-[68%] top-[34%]',
@@ -203,21 +203,22 @@ const TechStack: React.FC = () => {
                 ref={el => nodeRefs.current[index] = el}
                 onMouseEnter={() => handleNodeMouseEnter(tech, index)}
                 onMouseLeave={handleNodeMouseLeave}
+                onClick={() => handleNodeMouseEnter(tech, index)}
                 style={{
-                  transform: `translate(calc(-50% + ${offset.x}px), calc(-50% + ${offset.y}px)) ${isActive ? 'scale(1.28)' : 'scale(1)'}`,
+                  transform: `translate(calc(-50% + ${offset.x}px), calc(-50% + ${offset.y}px)) ${isActive ? 'scale(1.22)' : 'scale(1)'}`,
                   animationDelay: `${(index % 3) * -1.4}s`
                 }}
-                className={`absolute w-[104px] h-[104px] rounded-full flex flex-col items-center justify-center cursor-pointer transition-transform duration-500 animate-pulse ${positions[tech.id]} ${
+                className={`absolute w-[72px] h-[72px] sm:w-[90px] sm:h-[90px] md:w-[104px] md:h-[104px] rounded-full flex flex-col items-center justify-center cursor-pointer transition-all duration-500 animate-pulse ${positions[tech.id]} ${
                   isActive
                     ? 'z-40 border-2 border-white bg-dark-800 shadow-[0_0_65px_rgba(201,255,74,0.4)]'
                     : 'bg-radial from-[#292832] via-[#111116] to-[#111116] border border-white/10 shadow-[inset_-12px_-14px_28px_rgba(0,0,0,0.4),0_18px_35px_rgba(0,0,0,0.32)]'
                 }`}
               >
-                <div className={`w-[62px] h-[62px] rounded-full p-2.5 flex items-center justify-center bg-[#f5f3ee] shadow-[0_8px_22px_rgba(0,0,0,0.28)] ${tech.id === 'github' ? 'invert' : ''}`}>
+                <div className={`w-[44px] h-[44px] sm:w-[54px] sm:h-[54px] md:w-[62px] md:h-[62px] rounded-full p-2 sm:p-2.5 flex items-center justify-center bg-[#f5f3ee] shadow-[0_8px_22px_rgba(0,0,0,0.28)] ${tech.id === 'github' ? 'invert' : ''}`}>
                   <img src={tech.icon} alt={tech.name} className="w-full h-full object-contain" />
                 </div>
                 
-                <h3 className="absolute top-[calc(100%+11px)] left-1/2 -translate-x-1/2 text-xs font-semibold text-[#bbb8c1] whitespace-nowrap">
+                <h3 className="absolute top-[calc(100%+6px)] sm:top-[calc(100%+11px)] left-1/2 -translate-x-1/2 text-[10px] sm:text-xs font-semibold text-[#bbb8c1] whitespace-nowrap">
                   {tech.name}
                 </h3>
 
@@ -226,14 +227,14 @@ const TechStack: React.FC = () => {
                   <motion.div 
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className={`absolute left-1/2 -translate-x-1/2 w-[230px] p-3 rounded-xl bg-[#0a0a0d]/95 border border-[#3a3842] text-center shadow-2xl backdrop-blur-md z-50 ${
-                      isBottomHalf ? 'bottom-[calc(100%+38px)]' : 'top-[calc(100%+38px)]'
+                    className={`absolute left-1/2 -translate-x-1/2 w-[180px] sm:w-[230px] p-2.5 sm:p-3 rounded-xl bg-[#0a0a0d]/95 border border-[#3a3842] text-center shadow-2xl backdrop-blur-md z-50 ${
+                      isBottomHalf ? 'bottom-[calc(100%+28px)]' : 'top-[calc(100%+28px)]'
                     }`}
                   >
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-accent-400 block mb-1">
+                    <span className="text-[9px] sm:text-[10px] font-mono uppercase tracking-wider text-accent-400 block mb-1">
                       {tech.role}
                     </span>
-                    <p className="text-xs text-[#ddd9e1] leading-relaxed">
+                    <p className="text-[10px] sm:text-xs text-[#ddd9e1] leading-relaxed">
                       {tech.description}
                     </p>
                   </motion.div>
